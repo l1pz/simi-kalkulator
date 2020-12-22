@@ -79,16 +79,20 @@
 
 <style>
 	:global(body) {
-		background-image: url("/images/bg.png"),
-			radial-gradient(at center center, #ffffff 0%, #f9de79 100%);
-		background-position: center center, bottom center;
-		background-size: cover, cover;
 		font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 		color: #5e0000;
 		font-size: 1.1rem;
+		padding: 0;
 	}
 
 	.content {
+		background-image: url("/images/bg.png"),
+			radial-gradient(at center center, #ffffff 0%, #f9de79 100%);
+		background-position: center center, bottom center;
+		background-size: auto, cover;
+	}
+
+	.container {
 		max-width: 500px;
 		margin: auto;
 		padding: 20px;
@@ -130,21 +134,23 @@
 </style>
 
 <div class="content">
-	<img src="/images/logo.png" alt="" srcset="" />
-	{#each items as item}
-		<div class="item">
-			<h3>{item.name} - {numberFormat(item.price)} Ft</h3>
-			<div class="itemData">
-				{item.qty}
-				db -
-				{numberFormat(item.sumPrice)}
-				Ft
+	<div class="container">
+		<img src="/images/logo.png" alt="" srcset="" />
+		{#each items as item}
+			<div class="item">
+				<h3>{item.name} - {numberFormat(item.price)} Ft</h3>
+				<div class="itemData">
+					{item.qty}
+					db -
+					{numberFormat(item.sumPrice)}
+					Ft
+				</div>
+				<div class="itemButtons">
+					<button on:click={() => modify(item, -1)}> - </button>
+					<button on:click={() => modify(item, 1)}> + </button>
+				</div>
 			</div>
-			<div class="itemButtons">
-				<button on:click={() => modify(item, -1)}> - </button>
-				<button on:click={() => modify(item, 1)}> + </button>
-			</div>
-		</div>
-	{/each}
-	<h2>Összesen: {numberFormat(sum)} Ft</h2>
+		{/each}
+		<h2>Összesen: {numberFormat(sum)} Ft</h2>
+	</div>
 </div>
