@@ -79,7 +79,7 @@
 
 <style>
 	:global(body) {
-		background-image: url("images/bg.png"),
+		background-image: url("/images/bg.png"),
 			radial-gradient(at center center, #ffffff 0%, #f9de79 100%);
 		background-position: center center, bottom center;
 		background-size: cover, cover;
@@ -130,7 +130,7 @@
 </style>
 
 <div class="content">
-	<img src="images/logo.png" alt="" srcset="" />
+	<img src="/images/logo.png" alt="" srcset="" />
 	{#each items as item}
 		<div class="item">
 			<h3>{item.name} - {numberFormat(item.price)} Ft</h3>
