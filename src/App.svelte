@@ -1,7 +1,4 @@
 <script>
-	import { cartContents, totalPrice } from "./cart.js";
-	import CartItems from "./CartItems.svelte";
-
 	function modify(item, val) {
 		item.qty = Math.max(item.qty + val, 0);
 		item.sumPrice = item.qty * item.price;
