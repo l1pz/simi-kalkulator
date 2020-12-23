@@ -8,6 +8,15 @@
 		items.sort(itemCompare);
 	}
 
+	function reset() {
+		items = items.map((item) => {
+			item.qty = 0;
+			item.sumPrice = 0;
+			return item;
+		});
+		sum = 0;
+	}
+
 	function itemCompare(a, b) {
 		// non-anonymous as you ordered...
 		return b.name < a.name
@@ -115,13 +124,18 @@
 		font-size: 16px;
 	}
 
+	button:hover {
+		background-color: white;
+		color: #5e0000;
+	}
+
 	.itemData,
 	.itemButtons {
 		text-align: center;
 		margin: 4px;
 	}
 
-	.content h2 {
+	.summary {
 		text-align: center;
 		font-weight: bold;
 	}
@@ -146,11 +160,14 @@
 					Ft
 				</div>
 				<div class="itemButtons">
-					<button on:click={() => modify(item, -1)}> - </button>
-					<button on:click={() => modify(item, 1)}> + </button>
+					<button on:click={modify(item, -1)}> - </button>
+					<button on:click={modify(item, 1)}> + </button>
 				</div>
 			</div>
 		{/each}
-		<h2>Összesen: {numberFormat(sum)} Ft</h2>
+		<div class="summary">
+			<h2>Összesen: {numberFormat(sum)} Ft</h2>
+			<button on:click={() => reset()}> Nullázás </button>
+		</div>
 	</div>
 </div>
