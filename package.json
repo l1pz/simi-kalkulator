@@ -6,9 +6,6 @@
     "dev": "rollup -c -w",
     "start": "sirv public"
   },
-  "engines": {
-    "node": "14.x"
-  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "11.0.2",
     "@rollup/plugin-node-resolve": "^7.0.0",

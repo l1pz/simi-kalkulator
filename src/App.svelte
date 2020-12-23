@@ -2,7 +2,7 @@
 	function modify(item, val) {
 		item.qty = Math.max(item.qty + val, 0);
 		item.sumPrice = item.qty * item.price;
-		sum = sum + val * item.price;
+		sum = Math.max(sum + val * item.price, 0);
 		items = items.filter((x) => x.name != item.name);
 		items.push(item);
 		items.sort(itemCompare);
