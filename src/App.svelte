@@ -124,11 +124,6 @@
 		font-size: 16px;
 	}
 
-	button:hover {
-		background-color: white;
-		color: #5e0000;
-	}
-
 	.itemData,
 	.itemButtons {
 		text-align: center;
