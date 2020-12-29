@@ -79,6 +79,24 @@
 			qty: 0,
 			sumPrice: 0,
 		},
+		{
+			name: "Fahéjas - Almalé 3L",
+			price: 1000,
+			qty: 0,
+			sumPrice: 0,
+		},
+		{
+			name: "Sárgarépa - Almalé 3L",
+			price: 1300,
+			qty: 0,
+			sumPrice: 0,
+		},
+		{
+			name: "Fekete berkenyelé 3L",
+			price: 4000,
+			qty: 0,
+			sumPrice: 0,
+		},
 	];
 
 	let sum = 0;
